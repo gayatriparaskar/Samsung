@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edit laptop Product</title>
+    <style>
+      h4 {
+        text-align: center;
+        text-decoration: underline;
+      }
+      #from {
+        border: 2px solid red;
+        background-image: url("");
+      }
+      #from div {
+        text-align: center;
+        margin: 10px 0px 0px 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- // update id -->
+    <h4>Update Product</h4>
+    <div id="from">
+      <div>
+        Id:<input
+          type="number"
+          id="idupdate"
+          class="u-full-width"
+          placeholder="Id"
+        />
+      </div>
+      <br />
+      <div>
+        Name:<input
+          type="text"
+          id="nameupdate"
+          class="u-full-width"
+          placeholder="Name"
+        />
+      </div>
+      <br />
+      <div>
+        Description:<input
+          type="text"
+          id="Descriptionupdate"
+          class="u-full-width"
+          placeholder="Description"
+        />
+      </div>
+      <br />
+      <div>
+        Price:<input
+          type="text"
+          id="priceupdate"
+          class="u-full-width"
+          placeholder="Enter price"
+        />
+      </div>
+      <br />
+      <div>
+        Offerprice:<input
+          type="text"
+          id="offerPrice"
+          class="u-full-width"
+          placeholder="Enter material type"
+        />
+      </div>
+      <br />
+      <div>
+        Image:<input
+          type="text"
+          id="imageupdate"
+          class="u-full-width"
+          placeholder="Give link of image"
+        />
+      </div>
+      <br /><br />
+      <div><button id="updateUser" class="btn">update Product</button></div>
+    </div>
+  </body>
+
+  <script>
+    // update user
+    let id = document.getElementById("idupdate");
+    let nameupdate = document.getElementById("nameupdate");
+    let Descriptionupdate = document.getElementById("Descriptionupdate");
+    let priceupdate = document.getElementById("priceupdate");
+    let offerPrice = document.getElementById("offerPrice");
+    let imageupdate = document.getElementById("imageupdate");
+    let updateUser = document.getElementById("updateUser");
+
+    let bagArr = JSON.parse(localStorage.getItem("bag"));
+    if (bagArr === null) {
+      bagArr = [];
+    }
+
+    bagArr.forEach((e, i) => {
+      id.value = e.id;
+      nameupdate.value = e.name;
+      Descriptionupdate.value = e.description;
+      priceupdate.value = e.price;
+      offerPrice.value = e.offerPrize;
+      imageupdate.value=e.image;
+    });
+
+    // update user
+    updateUser.addEventListener("click", function () {
+      let obj1 = {
+        name: nameupdate.value,
+        offerPrice: offerPrice.value,
+        Description: Descriptionupdate.value,
+        price: priceupdate.value,
+        image: imageupdate.value,
+      };
+      console.log(obj1);
+      fetch(`https://6789f159dd587da7ac28232e.mockapi.io/Users/${id.value}`, {
+        method: "PUT", // or PATCH
+        headers: { "content-type": "application/json" },
+        body: JSON.stringify(obj1),
+      })
+        .then((res) => {
+          if (res.ok) {
+            return res.json();
+          } else {
+            throw new Error("Failed to update user");
+          }
+        })
+        .then((task1) => {
+          getUsers();
+          // renderUser(result)
+          console.log(task1);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    });
+
+    function getUsers() {
+      fetch("https://6789f159dd587da7ac28232e.mockapi.io/Users", {
+        method: "GET",
+        headers: { "content-type": "application/json" },
+      })
+        .then((res) => {
+          if (res.ok) {
+            return res.json();
+          }
+        })
+        .then((result) => {
+          renderUser(result);
+          console.log(result);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    }
+  </script>
+</html>

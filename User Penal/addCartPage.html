@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/db927a23ed.js" crossorigin="anonymous"></script>
+
+    <title>Document</title>
+    <style>
+        * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+    }
+
+    .navbar {
+        height: 100px;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 10px 20px;
+        background-color: white;
+        border-bottom: 1px solid #ddd;
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    }
+
+    .logo {
+        font-size: 22px;
+        font-weight: bold;
+        color: black;
+        cursor: pointer;
+    }
+
+    .nav-links {
+        list-style: none;
+        display: flex;
+        /* margin-right: 10%; */
+        cursor: pointer;
+        font-weight: bolder;
+    }
+
+    .nav-links li {
+        margin: 0 10px;
+    }
+    .nav-links li:hover {
+        color: #0073e6;
+    }
+
+    .nav-icons {
+        /* margin-right: 20%; */
+        display: flex;
+        align-items: center;
+    }
+
+    .search1-box {
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 15px;
+        outline: none;
+        /* margin-right: 30%; */
+    }
+
+    .nav-icons i {
+        font-size: 22px;
+        color: black;
+        margin-left: 20px;
+        cursor: pointer;
+        transition: color 0.3s;
+    }
+
+    .nav-icons i:hover {
+        color: #0073e6;
+    }
+        .nav-icons {
+        /* margin-right: 20%; */
+        display: flex;
+        align-items: center;
+    }
+
+    .search1-box {
+        padding: 8px;
+        border: 1px solid #ccc;
+        border-radius: 15px;
+        outline: none;
+        /* margin-right: 30%; */
+    }
+    .nav-icons i {
+        font-size: 22px;
+        color: black;
+        margin-left: 20px;
+        cursor: pointer;
+        transition: color 0.3s;
+    }
+
+    .nav-icons i:hover {
+        color: #0073e6;
+    }
+.nav-links a{
+    text-decoration: none;
+    color: black;
+}
+.iconn{
+    display: none;
+}
+/* Navbar css complete */
+#login{
+    background-color:rgb(245, 240, 240) ;
+    margin: 30px 20px 0px 20px;
+    border-radius: 10px;
+    height: 60px;
+    padding: 10px;
+    font-weight: bold;
+
+}
+#signIn{
+    background-color: black; 
+    color: white;
+    padding: 10px;
+    font-weight: bold;
+    border-radius: 20px;
+    float: right;
+    margin-right: 10px;
+}
+#container{
+    display: flex;
+    /* border:2px solid red; */
+    padding: 10px;
+}
+#product{
+    display: flex;
+    width: 100%;
+    margin-top: 100px;
+
+    /* border:2px solid red */
+}
+#product img{
+    margin: 20px;
+}
+#name{
+    margin-top: 30px;   
+}
+#price{
+    margin-top: 30px;
+}
+#pricedown ul li{
+font-size: 10px;
+
+}
+#leftDiv{
+   
+    /* background-color: red; */
+    height: 300px;
+}
+#rightDiv{
+    position: sticky;
+   top: 0px;
+    margin-left: 50px;
+    width: 500px;
+    text-align: center;
+    padding: 10px;
+    float: right;
+    border: 1px solid gray;
+    border-radius: 10px;
+  
+}
+#apply{
+    background-color: rgb(189, 186, 186);
+    padding: 10px;
+    border: none;
+    border-radius: 30px;
+}
+#link{
+    display: flex;
+    justify-content: space-between;
+}
+#link a{
+    color: black;
+     
+}
+#checkOut{
+    width: 100%;
+    background-color: #009de6;
+    color: white;
+    padding: 10px;
+    border-radius: 20px;
+    border: none;
+    font-weight: bolder;
+}
+.offer-card {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .offer-card:first-child {
+            background-color: #949596;
+        }
+        .offer-card:last-child {
+            background-color: #848080;
+        }
+        .offer-content {
+            max-width: 50%;
+        }
+        .offer-title {
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .offer-description {
+            font-size: 14px;
+            color: #555;
+            margin: 5px 0;
+        }
+        .learn-more {
+            font-size: 14px;
+            font-weight: bold;
+            text-decoration: underline;
+            cursor: pointer;
+        }
+        .add-option {
+            font-size: 14px;
+            cursor: pointer;
+        }
+        @media (max-width: 480px) {
+            .offer-card {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .offer-content {
+                max-width: 100%;
+            }
+            .add-option {
+                align-self: flex-end;
+                margin-top: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- navbar -->
+    <nav class="navbar">
+        <div class="logo"><a href="Home Page.html"><img style="width: 100px;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSp28KNbT_76szjMx8V-F90zVouUYg3BblgtA&s"/></a></div>
+        <ul class="nav-links">
+            <li>Shop</a></li>
+            <li>Mobile</a></li>
+            <li>TV & AV</a></li>
+            <li>Appliances</a></li>
+            <li><a href="laptop.html">Computing & Displays</a></li>
+            <li>Accessories</a></li>
+            <li>SmartThings</a></li>
+            <li>AI</a></li>
+        </ul>
+        <div class="nav-icons">
+            <span>Support</span>
+            <span>For Bussiness</span>
+            <i class="fa-solid fa-cart-shopping"></i>
+            <i class="fa-regular fa-user"></i>
+        </div>
+        <div class="iconn">
+            <i class="fa fa-bars" aria-hidden="true"></i>
+        </div>
+    </nav>
+    <div id="login">
+        <span>Log in now to unlock special benefits</span>
+        <button id="signIn">Singn up/Singn in</button>
+    </div>
+    <!-- Navbar complete -->
+     <div id="con"></div><br><br>
+     <div id="container">
+        <div id="leftDiv">
+           <div id="product">
+            <img  id="image" style="width: 200px;
+            height: 200px;"
+            
+             <br><br>
+             <div id="name">
+                </div>
+            <div >
+                <p  id="offerprice" style="color: rgb(72, 203, 254);"></p>
+                <s id="price"></s>
+                 <p>Save ₹12000.00 </p>
+
+                 <i class="fa fa-trash" style="float: right;" aria-hidden="true"></i><br><br>
+                 <a href="#" style="color: black;">Buy one more</a>
+            </div>
+           </div> 
+        </div>
+        
+        <div id="rightDiv">
+            <div style="color: gray;">Voucher code</div>
+           <div style="display: flex;padding-left: 20px;justify-content: space-between;">
+            <p style="color: gray;text-decoration: underline;">Enter Voucher or Coupon</p>
+            <button id="apply">Apply Now</button><br>
+           </div>
+             <div id="link">
+             <a href="#">View Eligible Offers</a>
+             <a href="#">Vouchers not Working?</a>
+            </div><br>
+            <hr><br>
+            <div style="display: flex;justify-content: space-between;">
+                <div style="float: left;">Price Breakup
+                    <p>Price (inclusive all taxes)</p>
+                    <p>Discount</p>
+                    <p>Shiping charges</p>
+                </div>
+                <div>
+                    <a href="#" style="color: #0073e6;">View Tax Breakup</a><br>
+
+                    <p id="pricee"></p>
+                    <p>-107547.00</p>
+                    <p>0.00</p>
+                </div>
+            </div>
+            <hr>
+            <div style="display: flex;justify-content: space-between;">
+                <h1>Total</h1>
+                <h1 id="offer"></h1>    
+            </div>
+            <div style="display: flex;justify-content: space-between;">
+             <p>Inclusive GST*</p>
+                <p>Save Upto 20%</p>  
+            </div><br>
+         <button id="checkOut">Continue to Checkout</button><br>
+         <div>
+            <p>order Cancellation charges</p><br>
+            <p>Priority delivery : Fee applicable if order is cancelled or rejected at doorstep</p><br>
+            <p>Standard delivery : Fee applicable for cancellations after 2 hours of order placement or doorstep rejections.</p><br>
+            <a href="#" style="color: #009de6;">Cancellation Policy</a><br><br>
+            <p>*For the final GST amount, please refer to the Tax Invoice. For GSTIN purchases, the buyer has to ascertain the eligibility criteria of input tax credit.</p>
+         </div>
+
+        </div>
+        </div>
+        <div class="offer-card">
+            <div class="offer-content">
+                <div class="offer-title">Samsung Care+</div>
+                <div class="offer-description">Save up to Rs. 25000 on Device Repairs Get free Pick up & Drop for claim repairs</div>
+                <div class="learn-more">Learn More</div>
+            </div>
+            <div class="add-option">&#x2795; Add</div>
+        </div>
+        <div class="offer-card">
+            <div class="offer-content">
+                <div class="offer-title">Exchange Offer</div>
+                <div class="offer-description">Trade in your old device & receive instant discount on your order</div>
+                <div class="learn-more">Learn More</div>
+            </div>
+            <div class="add-option">&#x2795; Add</div>
+        </div>
+     
+        <br><br>
+        <p style="color: rgb(72, 203, 254);"> ₹ 8000 instant discount on HDFC bank cards OR Upgrade Bonus worth ₹ 9000</p>
+        <br>
+        <h4>Price Breakdown<i class="fa-solid fa-chevron-down"></i></h4>
+        <div id="pricedown">
+            <ul>
+                <li>Price(Inclusive of all taxes)</li>
+                <li>Promotion Discount(s)</li>
+            </ul>
+        </div>
+   
+</body>
+<script>
+let image=document.getElementById("image")
+let name=document.getElementById("name")
+let rightCon=document.getElementById("rightCon")
+let offerprice=document.getElementById("offerprice")
+let price=document.getElementById("price")
+let pricee=document.getElementById("pricee")
+let offer=document.getElementById("offer")
+let checkOut=document.getElementById("checkOut")
+
+checkOut.addEventListener("click",()=>{
+window.location.href="checkOutPage.html"
+})
+
+  
+
+
+let addCart=JSON.parse(localStorage.getItem("selectData"))
+console.log(addCart)
+
+      
+        image.src = addCart.image
+        name.innerText =`${addCart.name}`
+        price.innerText=addCart.price
+        offerprice.innerText =addCart.offerPrice
+        offerprice.style.color="#0073e6"
+        pricee.innerText=addCart.price
+       offer.innerText=addCart.offerPrice
+        // let detail=document.createElement("div")
+        // detail.style.marginTop="50px"
+        // detail.style.display="flex"
+        // leftCon.append(detail)
+
+        
+</script>
+</html>

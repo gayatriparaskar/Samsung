@@ -1,0 +1,61 @@
+
+
+GET https://6789f159dd587da7ac28232e.mockapi.io/Users
+
+###
+GET https://6789f159dd587da7ac28232e.mockapi.io/Product
+
+###
+GET https://6789f159dd587da7ac28232e.mockapi.io/Product
+
+
+// get method used to delete a data by using id
+###
+DELETE https://6789f159dd587da7ac28232e.mockapi.io/Product
+
+
+// put and patch method used to update  data by using id
+###
+POST  https://6789f159dd587da7ac28232e.mockapi.io/Product/5
+Content-Type: application/json
+
+ {
+   "name": "Galaxy S24 FE 5G ",
+    "image": "https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcT-pn4fV7OXvGE1RWRDt9VVaXkhaxp7D2Q6V3E6sY8Z-pT8YYHaGJ0xvWIxumdrgtQwibuwOvY1lKgw7Fp_ERA-WCUP7Nnqhh-G7bgyLFH7&usqp=CAE"
+  }
+
+###
+  PATCH https://6789f159dd587da7ac28232e.mockapi.io/Users
+Content-Type: application/json
+ 
+ {
+   "name": "siya",
+    "Email": "riya@hotmail.com",
+    "salary": "22000"
+  }
+###
+GET https://6789f159dd587da7ac28232e.mockapi.io/Product
+###
+  PATCH  https://6789f159dd587da7ac28232e.mockapi.io/Product
+Content-Type: application/json
+ 
+ {
+   "name": "tina",
+    "Email": "tina@hotmail.com",
+    "salary": "21000"
+  }
+
+###
+PUT  https://6789f159dd587da7ac28232e.mockapi.io/Product/30
+Content-Type: application/json
+
+ {
+   "name": "Galaxy S20 FE",
+   "image":"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkS7Dr5UmXOl3ha9Wyu_97XMZu_fKqqVAxJQ&s",
+   "price":"12000"
+  }
+
+
+ 
+
+ 

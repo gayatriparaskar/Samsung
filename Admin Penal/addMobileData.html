@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Edit Mobile Product</title>
+    <style>
+      h4 {
+        text-align: center;
+        text-decoration: underline;
+      }
+      #from {
+        border: 2px solid red;
+        background-image: url("");
+      }
+      #from div {
+        text-align: center;
+        margin: 10px 0px 0px 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- // update id -->
+    <h4>Add Mobile Product</h4>
+    <div id="from">
+      <div>
+        Name:<input
+          type="text"
+          id="nameupdate"
+          class="u-full-width"
+          placeholder="Name"
+        />
+      </div>
+      <br />
+      <div>
+        Description:<input
+          type="text"
+          id="Descriptionupdate"
+          class="u-full-width"
+          placeholder="Description"
+        />
+      </div>
+      <br />
+      <div>
+        Price:<input
+          type="number"
+          id="priceupdate"
+          class="u-full-width"
+          placeholder="Enter price"
+        />
+      </div>
+      <br />
+      <div>
+        Offerprice:<input
+          type="number"
+          id="offerPrice"
+          class="u-full-width"
+          placeholder="Enter material type"
+        />
+      </div>
+      <br />
+      <div>
+        Image:<input
+          type="text"
+          id="imageupdate"
+          class="u-full-width"
+          placeholder="Give link of image"
+        />
+      </div>
+      <br /><br />
+      <div><button id="addProduct" class="btn">Add Mobile Product</button></div>
+    </div>
+  </body>
+
+  <script>
+   let AddUser=document.getElementById("addProduct")
+    let token=JSON.parse(localStorage.getItem("teken"))
+    console.log(token)
+    AddUser.addEventListener("click", () => {
+     
+      if(token&&token.token.length>0){
+
+        let obj1 = {
+            name: nameupdate.value, 
+            description:Descriptionupdate.value,
+            price: priceupdate.value,
+            offerPrize:offerPrice.value,
+            image:imageupdate.value
+        };
+        console.log(obj1);
+
+        fetch("https://6789f159dd587da7ac28232e.mockapi.io/Product", {
+          method: "POST",
+          headers: { "content-type": "application/json" },
+          // Send your data in the request body as JSON
+          body: JSON.stringify(obj1),
+        })
+          .then((res) => {
+            if (res.ok) {
+              return res.json();
+            }
+          })
+          .then((task) => {
+            getUsers();
+            // renderUser(result)
+            console.log(task);
+          })
+          .catch((err) => {
+            console.log(err);
+          });
+      }else{
+        window.location.href = "/User Penal/admin login page.html"; 
+      }
+      // window.location.href="mobileProduct.html"
+      });
+      
+      function getUsers() {
+        fetch("https://6789f159dd587da7ac28232e.mockapi.io/Product", {
+          method: "GET",
+          headers: { "content-type": "application/json" },
+        })
+          .then((res) => {
+            if (res.ok) {
+              return res.json();
+            }
+          })
+          .then((result) => {
+            // renderUser(result);
+            console.log(result);
+          })
+          .catch((err) => {
+            console.log(err);
+          });
+      }
+  </script>
+</html>

@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+    <title>Laptop Product Admin</title>
+    <style>
+      .edit {
+      display: inline;
+      background-color: #caa229;
+      border: none;
+      width: 100px;
+      height: 30px;
+      margin-left: 10px;
+      margin-right: 10px;
+      color: #fff;
+    }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    .header {
+      position: fixed;
+    }
+    .row {
+      display: flex;
+      background-color: #fff;
+      justify-content: space-around;
+      box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    }
+
+    .header-logo {
+      margin: 20px;
+    }
+    .header-logo a img {
+      width: 150px;
+      height: 100px;
+      display: flex;
+      justify-items: center;
+      margin: 7px;
+    }
+    .header_nav_menu ul {
+      display: flex;
+      margin-top: 30px;
+    }
+    .header_nav_menu ul li {
+      margin: 20px;
+      list-style: none;
+    }
+
+    .header_nav_menu ul li a {
+      text-decoration: none;
+      color: #2c4152;
+    }
+
+    .header-search {
+      border: 1px solid #2c4152;
+      margin: 20px;
+      width: 300px;
+      border-radius: 40px;
+      padding: 7px;
+      height: 35px;
+      margin-top: 40px;
+      display: flex;
+      justify-content: space-around;
+      background-color: #fffded;
+    }
+    .header-search input {
+      width: 100%;
+      outline: none;
+      border: none;
+      font-weight: 500;
+      transition: 0.8s;
+      background: transparent;
+    }
+    .icon i {
+      margin-left: 20px;
+      margin-top: 40px;
+      background-color: #2c4152;
+      cursor: pointer;
+      color: white;
+      padding: 10px;
+      border-radius: 40px;
+      margin-right: 5px;
+    }
+    </style>
+</head>
+<body>
+  <!-- header section -->
+  <header id="header">
+    <div class="container">
+      <div class="row">
+        <div class="header-logo">
+          <a href="#"
+            ><img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSp28KNbT_76szjMx8V-F90zVouUYg3BblgtA&s"
+              alt=""
+          /></a>
+        </div>
+        <div class="header-nav">
+          <nav class="header_nav_menu">
+            <ul>
+              <li><a href="AdminPage.html">HOME</a></li>
+              <li><a href="mobileProduct.html">MOBILE</a></li>
+              <li><a href="laptopProduct.html">LAPTOP</a></li>
+            </ul>
+          </nav>
+        </div>
+        <div class="header-search">
+          <input type="text" name="" id="search" placeholder="search AJIO" />
+          <a href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
+        </div>
+        <div class="header_icon">
+          <div class="icon">
+            <a href="#"><i class="fa-regular fa-heart"></i></a>
+            <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- header section end -->
+
+     <!-- Laptop Data Table Start -->
+       <!-- sort section  -->
+       <h2>For Laptop </h2>
+       <label for="sorttPrice">Sort By price:</label>
+       <select id="sorttprice">
+         <option value="">--Select--</option>
+         <option value="LtoH">Price (low to high)</option>
+         <option value="HtoL">Price (high to low)</option>
+       </select>
+       <!-- filter section -->
+       <select id="filterr">
+         <option value="">Filter</option>
+         <option value="Galaxy Book4 39.62 cm, Intel® Core™ i7, 16 GB, Intel® Iris® Xe Graphics">Galaxy Book4 39.62 cm, Intel® Core™ i7, 16 GB, Intel® Iris® Xe Graphics</option>
+         <option value="Galaxy Book4 39.62 cm, Core™ 7, 16 GB, Intel® Graphics">Galaxy Book4 39.62 cm, Core™ 7, 16 GB, Intel® Graphics</option>
+         <option value="Galaxy Book3 360, 33.78 cm, i5, 16 GB, Intel Xe Graphics">Galaxy Book3 360, 33.78 cm, i5, 16 GB, Intel Xe Graphics</option>
+         <option value="Galaxy Book3 360, 33.78 cm, i7, 16 GB, Intel Xe Graphics">Galaxy Book3 360, 33.78 cm, i7, 16 GB, Intel Xe Graphics</option>
+         <option value="Galaxy Book4 360, 39.62 cm, Core™ 7, 16 GB, Intel® Graphics">Galaxy Book4 360, 39.62 cm, Core™ 7, 16 GB, Intel® Graphics</option>
+         <option value="Galaxy Book4 39.62 cm, Core™ 7, 16 GB, Intel® Graphics 512 GB">
+           Galaxy Book4 39.62 cm, Core™ 7, 16 GB, Intel® Graphics 512 GB
+         </option>
+        
+       </select>
+       <button
+         id="addProductLaptop"
+         style="background-color: rgb(135, 235, 210); border: none; padding: 5px">
+         Add Laptop Product
+       </button>
+       <hr />
+       <br>
+       <table
+         border="2"
+         style="border: 1px solid black; border-collapse: collapse">
+         <thead style="text-align: center">
+           <tr>
+             <td>S.No</td>
+             <td>Image</td>
+             <td>name</td>
+             <td>Description</td>
+             <td>Price</td>
+             <td>OfferPrice</td>
+             <td>Edit</td>
+             <td>Delete</td>
+           </tr>
+         </thead>
+         <tbody id="tableLaptop" style="text-align: center"></tbody>
+       </table>
+       <h3> Click this button for Seen the Laptop Data</h3>
+       <button id="laptop">Click for Laptop</button>
+       <!-- Laptop Data Table End -->
+     </body>
+     <script>
+    
+     //  For Laptop Data Start
+     let addProductLap = document.getElementById("addProductLaptop");
+
+let tblLap = document.getElementById("tableLaptop");
+let laptop=document.getElementById("laptop")
+let sortt = document.getElementById("sorttprice");
+let filterr = document.getElementById("filterr");
+let del;
+let bagArr=JSON.parse(localStorage.getItem("bag"))
+if(bagArr===null){
+  bagArr=[]
+}
+addProductLap.addEventListener("click", function () {
+  window.location.href = "laptopAddProduct.html";
+});
+
+laptop.addEventListener("click",function(){
+  tableLap(Data);
+})
+let Data= [];
+let fetchData = fetch(`https://6789f159dd587da7ac28232e.mockapi.io/Users`)  // Laptop
+  .then(function (response) {
+    console.log(response);
+    return response.json();
+  })
+  .then(function (res) {
+    console.log(res);
+    Data = res;
+    // tableLap(Data)
+  })
+  .catch(function (error) {
+    console.log("Error fetching data: ", error);
+  });
+
+function tableLap(Data) {
+  Data.forEach((e, i) => {
+    let trr = document.createElement("tr");
+    tblLap.append(trr);
+    let snTdd = document.createElement("td");
+    snTdd.innerText = e.id;
+    let Imagee = document.createElement("img");
+    Imagee.style.width = "100px";
+    Imagee.src = e.image;
+    let namee = document.createElement("td");
+    namee.innerText = e.name;
+    let descc = document.createElement("td");
+    descc.innerText = e.description;
+
+    let pricee = document.createElement("td");
+    pricee.innerHTML = `<s>${e.price}</s>`;
+    let offerPrice=document.createElement("td")
+    offerPrice.innerText=e.offerPrice
+    let editt = document.createElement("td");
+    editt.innerText = "EDIT";
+    editt.addEventListener("click", function () {
+        bagArr.push(e)
+        console.log(bagArr)
+        localStorage.setItem("bag",JSON.stringify(bagArr))
+      window.location.href = "editDateLaptop.html";
+    });
+    let Deletee = document.createElement("td");
+    Deletee.innerText = "DELETE";
+    Deletee.style.cursor = "pointer";
+    Deletee.addEventListener("click", function () {
+      alert("Are you sure to Delete this!");
+      console.log(e.id);
+      del=e.id
+      deleteProductLap(); // Call function to delete the product
+    });
+    trr.append(snTdd, Imagee, namee, descc, pricee,offerPrice, editt, Deletee);
+  });
+}
+
+sortt.addEventListener("change", function () {
+  tblLap.innerHTML = null;
+  console.log(sortt.value);
+  let sortData = [...Data];
+  if (sortt.value === "LtoH") {
+    sortData.sort((a, b) => {
+      return a.price - b.price;
+    });
+    console.log(sortData);
+    tableLap(sortData);
+  } else if (sortt.value === "HtoL") {
+    sortData.sort((a, b) => {
+      return b.price - a.price;
+    });
+    console.log(sortData);
+    tableLap(sortData);
+  }
+});
+
+// filter by material
+
+filterr.addEventListener("change", function () {
+  tblLap.innerHTML = null;
+
+  let selectedIid = filterr.value;
+  console.log(selectedIid);
+  let filterDataa = Data.filter((e, i) => {
+    //console.log(e.material)
+    return e.name == selectedIid;
+  });
+  console.log(filterDataa);
+
+  tableLap(filterDataa);
+});
+
+ // delete mobile product
+ console.log(del)
+function deleteProductLap(){
+  tblLap.innerHTML=null
+fetch(`https://6789f159dd587da7ac28232e.mockapi.io/Users/${del}`, {
+  method: 'DELETE',
+}).then(res => {
+  if (res.ok) {
+      return res.json();
+  }
+  // handle error
+}).then(task => {
+  tableLap()
+  // Do something with deleted task
+}).catch(error => {
+  // handle error
+})
+}
+</script>
+</html>

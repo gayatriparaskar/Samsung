@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Samsung Mobile Checkout</title>
+  <style>
+    /* Global Styles */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f9f9f9;
+    }
+
+    header {
+      background-color: #1428a0;
+      color: white;
+      text-align: center;
+      padding: 1rem 0;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 20px auto;
+      padding: 20px;
+      background: white;
+      border-radius: 8px;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    h1 {
+      color: #1428a0;
+      text-align: center;
+    }
+
+    form {
+      display: grid;
+      gap: 20px;
+    }
+
+    label {
+      font-weight: bold;
+    }
+
+    input, select, button {
+      width: 100%;
+      padding: 10px;
+      margin: 5px 0;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+
+    button {
+      background-color: #1428a0;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #0d1e67;
+    }
+
+    .summary {
+      margin-top: 20px;
+      padding: 10px;
+      background-color: #f4f4f4;
+      border-left: 5px solid #1428a0;
+    }
+
+    .summary h2 {
+      margin: 0;
+    }
+
+    /* Media Query for Mobile */
+    @media (max-width: 768px) {
+      .container {
+        padding: 10px;
+      }
+
+      form {
+        gap: 15px;
+      }
+
+      button {
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Samsung Mobile Booking</h1>
+  </header>
+
+  <div class="container">
+    <h1>Checkout</h1>
+    <form id="bookingForm">
+      <!-- User Information -->
+      <div>
+        <label for="name">Full Name</label>
+        <input type="text" id="name" name="name" placeholder="Enter your name" required>
+      </div>
+
+      <div>
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" placeholder="Enter your email" required>
+      </div>
+
+      <div>
+        <label for="phone">Phone Number</label>
+        <input type="tel" id="phone" name="phone" placeholder="Enter your phone number" required>
+      </div>
+
+      <!-- Product Selection -->
+      <div>
+        <label for="model">Select Model</label>
+        <select id="model" name="model" required>
+          <option value="">-- Select Model --</option>
+          <option value="galaxy-s23">Samsung Galaxy S23</option>
+          <option value="galaxy-s23-ultra">Samsung Galaxy S23 Ultra</option>
+          <option value="galaxy-z-fold5">Samsung Galaxy Z Fold 5</option>
+          <option value="galaxy-z-flip5">Samsung Galaxy Z Flip 5</option>
+        </select>
+      </div>
+
+      <!-- Payment Information -->
+      <div>
+        <label for="payment">Payment Method</label>
+        <select id="payment" name="payment" required>
+          <option value="">-- Select Payment Method --</option>
+          <option value="credit-card">Credit Card</option>
+          <option value="paypal">PayPal</option>
+          <option value="cod">Cash on Delivery</option>
+        </select>
+      </div>
+
+      <button class="submit" type="submit" onclick="book()">Confirm Booking</button>
+    </form>
+
+    <!-- Order Summary -->
+    <div class="summary">
+      <h2>Order Summary</h2>
+      <p>Please fill in the form to see your order summary here.</p>
+    </div>
+  </div>
+</body>
+<script>
+      function book(){
+        alert("Your otp for confirmation is :2345")
+        window.location.href = "homePage.html"; 
+      }
+  // let submit=document.getElementsByClassName("submit")
+
+  // submit.addEventListener("submit",()=>{
+  //   e.preventDefault(); 
+  //   console.log("fgfcbf")
+  //   alert("Your otp for confirmation is :2345")
+  // })
+
+//   let bookingForm = document.getElementById("loginForm");
+//   bookingForm.addEventListener("submit", (e) => {
+//   // e.preventDefault(); 
+//   console.log("ritesh")
+
+// });
+</script>
+</html>

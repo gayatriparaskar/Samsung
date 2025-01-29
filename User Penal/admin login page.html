@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Login</title>
+</head>
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+    background:url("https://static.vecteezy.com/system/resources/thumbnails/012/410/341/small/premium-security-cyber-digital-concept-abstract-technology-background-protect-system-innovation-for-business-illustration-vector.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  
+  }
+  
+  /* Container styling */
+  .login-container {
+    /* background: #ffffff; */
+    border-radius: 8px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;    padding: 20px 30px;
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+      color: white;
+  }
+  
+  .login-container h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color:white;
+  }
+  
+  /* Input field styling */
+  .input-group {
+    margin-bottom: 15px;
+    text-align: left;
+    color: white;
+  }
+  
+  .input-group label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 5px;
+    color: #555;
+  }
+  
+  .input-group input {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #afa9a9;
+    border-radius: 4px;
+    outline: none;
+    transition: border-color 0.3s;
+    background: none;
+    color: white;
+  }
+  
+  .input-group input:focus {
+    border-color: #3498db;
+  }
+  
+  /* Button styling */
+  .btn {
+    width: 100%;
+    padding: 10px;
+    background: #3498db;
+    color: #ffffff;
+    font-size: 16px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+  
+  .btn:hover {
+    background: #2980b9;
+  }
+  
+  /* Error message styling */
+  .error-message {
+    color: #e74c3c;
+    font-size: 14px;
+    margin-top: 10px;
+    display: none;
+  }
+  
+</style>
+<body>
+  <div class="login-container">
+    <h1>Admin Login</h1>
+    <form id="loginForm">
+      <div class="input-group">
+        <label for="username">Username</label>
+        <input type="text" id="username" name="username" placeholder="Enter your Id" required>
+      </div>
+      <div class="input-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" placeholder="Enter your password" required>
+      </div>
+      <button type="submit" class="btn">Login</button>
+      <div class="error-message" id="errorMessage"></div>
+    </form>
+  </div>
+  <script >
+    // Select the form and error message elements
+let loginForm = document.getElementById("loginForm");
+let errorMessage = document.getElementById("errorMessage");
+
+
+let Admins = [
+  {
+    username: "GHP Mobiles",
+    password: "321@"
+  }
+ 
+];
+
+// Handle form submission
+loginForm.addEventListener("submit", (e) => {
+  e.preventDefault(); 
+
+  // Get input values
+  let username = document.getElementById("username").value;
+  let password = document.getElementById("password").value;
+
+  // Validate credentials using find()
+  let isValidAdmin = Admins.find(
+    (admin) => admin.username === username && admin.password === password
+);
+
+if (isValidAdmin) {
+    // Redirect to the admin dashboard
+     let obj= {
+    username: "GHP Mobiles",
+    token:"abvdkndnkjnkdjnk"
+  }
+  localStorage.setItem("teken",JSON.stringify(obj))
+    window.location.href = "/Admin Penal/AdminPage.html"; 
+  }else{
+// Show error message
+alert("Invalid Id or Password")
+// errorMessage.style.display = "block";
+//     errorMessage.textContent = "Invalid username or password!";
+  }
+    
+  
+});
+
+  </script>
+</body>
+</html>

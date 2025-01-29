@@ -1,0 +1,878 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+    integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Laptop</title>
+    <style>
+        * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+    }
+
+    .navbar {
+        position: sticky;
+        top: 0px;
+        z-index: 1;
+        height: 100px;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        justify-content:space-between;
+        padding: 10px 20px;
+        margin-bottom: 100px;
+        background-color: white;
+        border-bottom: 1px solid #ddd;
+        box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px, rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px, rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    }
+
+    .logo {
+        font-size: 22px;
+        font-weight: bold;
+        color: black;
+        cursor: pointer;
+    }
+
+    .nav-links {
+        list-style: none;
+        display: flex;
+        margin-right: 15%;
+        cursor: pointer;
+    }
+
+    .nav-links li {
+        margin: 0 10px;
+    }
+    nav ul li a {
+        text-decoration: none;
+        color: black;
+    }
+    .nav-links li:hover {
+        color: #0073e6;
+    }
+    .header-search {
+        border: none;
+        margin: 0px;
+        width: 100px;
+        border-radius: 40px;
+        padding: 7px;
+        height: 35px;
+        margin-top: 10px;
+        display: flex;
+        justify-content: space-around;
+        background-color: #f5f5f2;
+      }
+      .header-search input {
+        width: 100%;
+        outline: none;
+        border: none;
+        font-weight: 500;
+        transition: 0.8s;
+        background: transparent;
+      }
+    .nav-icons {
+        /* margin-right: 20%; */
+        display: flex;
+        align-items: center;
+    }
+
+    .search1-box {
+        padding: 5px;
+        border: 1px solid #ccc;
+        border-radius: 15px;
+        outline: none;
+        /* margin-right: 30%; */
+    }
+
+    .nav-icons i {
+        font-size: 18px;
+        color: black;
+        /* margin-left: 15px; */
+        cursor: pointer;
+        transition: color 0.3s;
+    }
+
+    .nav-icons i:hover {
+        color: #0073e6;
+    }
+    #navbar2{
+        display: flex;
+        margin: 20px;
+        color: gray;
+        font-size: 20px;
+        margin-left: 10px;
+    }
+    #navbar2:hover{
+      cursor: pointer;
+    }
+    #navbar2 select{
+        border: none;
+        width: 100px;
+        color: gray;
+        font-size: 20px;
+    }
+    #navbar2 select:hover{
+        cursor: pointer;
+    }
+        #sidenavbar {
+            position: relative;
+            width: 300px;
+        }
+
+        #sidenav {
+            position:sticky;
+            top: 0px;
+            z-index: -20;
+            /* bottom: 10px; */
+            width: 300px;
+            height: 100vh; /* Full viewport height */
+            overflow-y: auto; /* Enable scrolling */
+            background-color: #f1f1f1;
+            padding: 20px;
+            box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+        }
+
+        h2, h4 {
+            margin: 10px 0;
+        }
+
+        input[type="checkbox"] {
+            margin-right: 10px;
+        }
+
+        hr {
+            border: 1px solid #ddd;
+        }
+    #con{
+       
+        display: grid;
+        grid-template-columns: repeat(3,1fr);
+    }
+.card
+{
+    
+    width: 300px;
+    border-radius: 10px;
+    height: auto;
+    padding: 10px;
+    margin:10px  0px 0px 20px;
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.card:hover{
+    cursor: pointer;
+}
+#Galaxybook{
+    display: flex;
+}
+.book{
+    margin: 30px;
+    border-radius: 10px;
+    background-color: #f9f4f4;
+    width: auto;
+    height: 100px;
+    padding: 10px;
+    text-align: center;
+    display: flex;
+}
+.book img{
+    width: 100px;
+}
+.book h3{
+    padding: 10px;
+}
+.book:hover{
+    cursor: pointer;
+    border:1px solid black;
+}
+#window{
+    /* color: white; */
+    display: flex;
+    width: 300px;
+    float: right;
+    margin: 20px;
+    padding: 10px;
+    background-color: rgb(33, 173, 243);
+}
+#window:hover{
+    cursor: pointer;
+}
+#window p,span{
+    color: white;
+}
+#filter{
+    margin: 20px;
+    padding: 10px;
+}
+#container{
+    display: flex;
+}
+.arrow:hover{
+    cursor: pointer;
+}
+.btn1{
+background:transparent;
+border: 1px solid black;
+padding: 5px;
+margin: 5px 10px 10px 0px;
+}
+.btn2{
+background:transparent;
+border: 1px solid black;
+padding: 5px;
+margin: 5px 10px 10px 0px;
+}
+.buyNow{
+    background-color: black;
+    color: white;
+    padding: 10px;
+    border:none;
+    width: 100%;
+    border-radius: 50px;
+    margin: 5px;
+cursor: pointer;
+}
+.buyNow:hover{
+    background-color:white;
+    color: black;
+    border:1px solid black;
+}
+.learn{
+    background-color:white;
+    color: black;
+    padding: 10px;
+    border:1px solid black;
+    width: 100%;
+    border-radius: 50px;
+    margin: 5px;
+cursor: pointer;
+}
+.learn:hover{
+    background-color:black;
+    color: white;
+}
+#like{
+    display: flex;
+}
+.bugs img {
+    width: 200px;
+    height: 200px;
+    background-color: rgb(243, 239, 239);
+}
+.bugs{
+    margin: 20px;
+}
+#productServices{
+    display: flex;
+     cursor: pointer;
+  
+
+}
+.productDiv{
+
+  
+    width: 300px;
+    margin: 20px;
+    padding: 10px;
+}
+.productDiv p{
+    margin: 10px;
+}
+.productDiv p:hover{
+    margin: 10px;
+    text-decoration: underline;
+    color: #0073e6;
+}
+    .footer {
+        font-size: 10px;
+        /* background-color: #f2f2f2; */
+        margin: 20px;
+        margin-left: 5%;
+    }
+       
+     /* footer section */
+    
+
+     .footerLast {
+        font-family: Arial, sans-serif;
+        background: white;
+        /* padding: 10px 20px; */
+        /* border: 1px solid rgb(201, 194, 194); */
+        font-size: 14px;
+        display: flex;
+        padding: 15px;
+        /* margin: 10px; */
+        /* justify-content: center; */
+        align-items: center;
+        border-top: 1px solid rgb(199, 196, 196);
+    }
+
+    .footer-container {
+        width: 90%;
+        /* max-width: 1200px; */
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+
+    .footerI {
+        text-decoration: none;
+        color: black;
+        margin: 0 8px;
+    }
+
+    .footer-left {
+        display: flex;
+        gap: 20px;
+    }
+
+    .footer-left a {
+        text-decoration: none;
+        color: black;
+    }
+
+    .footer-right {
+        float: right;
+        font-size: 20px;
+        display: flex;
+        margin-right: 0px;
+        gap: 50px;
+    }
+    .iconn{
+        display: none;
+    }
+    #footernav{
+        display: flex;
+        gap: 10px;
+    }
+    #footerIcon{
+        display: flex;
+        gap: 10px;
+    }
+    #show{
+        color: gray;
+        padding-left: 20px;
+        margin: 10px;
+    }
+    #home span:hover{
+        text-decoration: underline;
+    }
+    #home span{
+        color: gray;
+        padding-left: 20px;
+        margin: 10px;
+    }
+    #showMore{
+        text-align: center;
+        border: none;
+        margin:30px 0px 0px 50% ;
+        background-color: black;
+        color: white;
+        padding: 10px;
+        border-radius: 20px;
+    }
+    .iconClass{
+        width: 20px;
+        height: 20px;
+        float: right;
+     }
+     #india{
+        width: 300px;
+        height: 500px;
+     }
+     #india:hover{
+        width: 350px;
+        height: 450px;
+        cursor: pointer;
+     }
+    </style>
+</head>
+<body>
+    
+    <nav class="navbar">
+        <div class="logo"><a href="homePage.html"><img style="width: 100px;" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSp28KNbT_76szjMx8V-F90zVouUYg3BblgtA&s"/></a></div>
+        <ul class="nav-links">
+            <li>Shop</a></li>
+            <li>Mobile</a></li>
+            <li>TV & AV</a></li>
+            <li>Appliances</a></li>
+            <li><a href="laptop.html">Computing & Displays</a></li>
+            <li>Accessories</a></li>
+            <li>SmartThings</a></li>
+            <li>AI</a></li>
+        </ul>
+        <div class="header-search">
+            <input type="text" name="" id="search" placeholder="search" />
+            <a href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
+          </div>
+        <div class="nav-icons">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <i class="fa-regular fa-user"></i>
+        </div>
+    </nav>
+    <div id="navbar2">
+        <div>Mobile / </div>
+        <select>
+            <option value="">Galaxy Book<i class="fa-solid fa-chevron-down"></i> </option>
+            <option value="Galaxy Smartphone">Galaxy Smartphone</option>
+            <option value="Galaxy Tab">Galaxy Tab</option>
+            <option value="Galaxy Watch">Galaxy Watch</option>
+            <option value="Galaxy Buds">Galaxy Buds</option>
+            <option value="Galaxy Ring">Galaxy Ring</option>
+            <option value="Galaxy Accessories">Galaxy Accessories</option>
+        </select>/
+        <select>
+            <option value="">Galaxy Book<i class="fa-solid fa-chevron-down"></i> </option>
+            <option value="Galaxy Book 360">Galaxy Book 360</option>
+            <option value="Galaxy Book Accessories">Galaxy Book Accessories</option>
+            <option value="All Galaxy Books">All Galaxy Books</option>
+          </select>
+    </div><br><br>
+    <h1 style="font-weight: bolder; font-size: 50px;margin: 20px;">All Galaxy Books </h1>
+    <div id="Galaxybook">
+        <div class="book">
+            <img src="https://images.samsung.com/is/image/samsung/assets/in/ux2/pcd-visual-lnb/Visual-LNB_Galaxy-Book4-Ultra_UK_mo.png?$ORIGIN_PNG$">
+            <h3>Galaxy Book</h3>
+        </div>
+
+        <div class="book">
+            <img src="https://images.samsung.com/is/image/samsung/assets/in/ux2/pcd-visual-lnb/Visual-LNB_Galaxy-Book4-Pro360_mo.png?$ORIGIN_PNG$">
+            <h3>Galaxy Book 360</h3>
+        </div>
+
+        <div class="book">
+            <img src="https://images.samsung.com/is/image/samsung/assets/in/ux2/pcd-visual-lnb/Visual_LNB_Accessories_mo.png?$ORIGIN_PNG$">
+            <h3>Galaxy Book Accessories</h3>
+        </div>
+
+        <div class="book">
+            <img src="https://images.samsung.com/is/image/samsung/assets/in/ux2/pcd-visual-lnb/Visual-LNB_All-Laptop_UK_mo.png?$ORIGIN_PNG$">
+            <h3>All Galaxy Books</h3>
+        </div>
+    </div>
+    <div id="window">
+   <p><i class="fa-brands fa-windows"></i> window | </p>
+   <span>Get to Know <b>Windows 11</b></span>
+    </div><br><br><br>
+    <div id="filter">
+        <div>Filter | Results</div>
+        <div style="float: right;">Sort<i class="fa-solid fa-chevron-down"></i></div>
+    </div>
+   
+   <!-- side navbar -->
+   
+   <div id="mainCont">
+    <div id="container">
+        <div id="sidenavbar">
+        <div id="sidenav">
+            <h2>Product</h2>
+            <select>
+                <option value="galaxy-book">Galaxy Book</option>
+            </select>
+
+            <hr><br>
+            <h4>OPERATING SYSTEM </h4>            
+            <select>
+                <option value="windows-home">Windows 11 Home</option>
+                <option value="windows-pro">Windows 11 Pro</option>
+            </select>
+            <hr><br>
+            <select>
+                <option value="intel-core-5">Intel Core 5</option>
+                <option value="intel-core-7">Intel Core 7</option>
+                <option value="intel-core-ultra-5">Intel Core Ultra 5</option>
+                <option value="intel-core-ultra-7">Intel Core Ultra 7</option>
+                <option value="intel-core-i5">Intel Core i5</option>
+                <option value="intel-core-i7">Intel Core i7</option>
+                <option value="intel-core-i9">Intel Core i9</option>
+            </select>
+            <hr><br>
+            <h4>MEMORY</h4>
+            <select>
+                <option value="8gb">8 GB</option>
+                <option value="16gb">16 GB</option>
+                <option value="32gb">32 GB</option>
+            </select>            <hr><br>
+            <h4>DISPLAY SIZE</h4>
+            <select>
+                <option value="13-inch">13 inch</option>
+                <option value="15-inch">15 inch</option>
+            </select>            <hr><br>
+            <h4>STORAGE</h4>
+            <select>
+                <option value="256gb">256 GB</option>
+                <option value="512gb">512 GB</option>
+                <option value="1tb">1 TB</option>
+            </select>
+        <hr><br>
+        <h4>AVAILABILITY</h4>
+        <select>
+            <option value="in-stock">In Stock</option>
+            <option value="out-of-stock">Out of Stock</option>
+        </select>            <hr><br>
+        <h4>SERIES</h4>
+        <select>
+            <option value="book-series-1">Series 1</option>
+            <option value="book-series-2">Series 2</option>
+        </select>            <hr><br>
+        <h4>FEATURES</h4>
+        <select>
+            <option value="lightweight">Lightweight</option>
+            <option value="touchscreen">Touchscreen</option>
+        </select>        </div>
+        </div>
+        <div id="con">
+            <!-- <i class="fa-solid fa-heart"></i> -->
+            <img  id="india" src="https://images.samsung.com/is/image/samsung/assets/in/pf/250111/660x1108.jpg?$ORIGIN_JPG$">
+            </div>
+   </div>
+   
+   <button id="showMore">Show more<i class="fa-solid fa-chevron-down"></i></button>
+    <br><br>
+   <h1 style="margin: 10px;">You Might Also Like</h1>
+   <div id="like">
+    <div class="bugs">
+        <img src="https://images.samsung.com/is/image/samsung/p6pim/in/2407/gallery/in-galaxy-buds3-pro-r630-sm-r630nzwainu-thumb-542134838?$UX_EXT1_PNG$"/>
+        <p><b>Galaxy Buds3 Pro</b></p>
+        <p><b>$ 19999.99</b></p>
+    </div>
+    <div class="bugs">
+        <img src="https://images.samsung.com/is/image/samsung/p6pim/in/2407/gallery/in-galaxy-buds3-r530-sm-r530nzaainu-thumb-542190004?$216_216_PNG$"/>
+        <p><b>Galaxy Buds3 Pro</b></p>
+        <p><b>$ 14999.99</b></p>
+    </div>
+    <div class="bugs">
+        <img src="https://images.samsung.com/is/image/samsung/p6pim/in/sm-x716bzeeinu/gallery/in-galaxy-tab-s9-5g-x716-sm-x716bzeeinu-thumb-537869642?$216_216_PNG$"/>
+        <p><b>Galaxy Buds3 Pro</b></p>
+        <p><b>$ 19999.99</b></p>
+    </div>
+    <div class="bugs">
+        <img src="https://images.samsung.com/is/image/samsung/p6pim/in/2501/gallery/in-galaxy-s25-s938-sm-s938bakcins-thumb-544703063?$216_216_PNG$"/>
+        <p><b>Galaxy Buds3 Pro</b></p>
+        <p><b>$ 29999.99</b></p>
+    </div>
+   </div><br>
+   <hr><br>
+   <p id="show">Images shown here are for representational purpose only, actual may vary. All features, specifications and prices are subject to change without prior notice. Model availability may vary from location to location.</p>
+   <hr><br>
+<div id="home"><span>HOME ></span><span> Section ></span><span> All Computers</span></div>
+<br>
+<hr>
+   <!-- Table Section -->
+<div id="productServices">
+    <div class="productDiv">
+        <h3>Product & Service</h3>
+           <p>Smartphones</p>
+            <p>Tablets</p>
+            <p>Audio Sound</p>
+            <p>Watches</p>
+            <p>Smart Switches</p>
+            <p>Mobiles Accessories</p>
+            <p>Tvs</p>
+            <p>Sound Devices</p>
+            <p>Refrigerators</p>
+            <p>Laundry</p>
+    </div>
+     <div class="productDiv">
+        <h3>Shop</h3>
+        <p>FAQs</p>
+        <p>Contact Us</p>
+        <p>Welcome Voucher</p>
+        <p>Samsung Referral Advantage</p>
+        <p>Samsung Student Advantage</p>
+        <p>Defence Puchase program</p>
+        <p>Corporate Employee Program</p>
+        <p>Corporate Bulk Purchase</p>
+        <p>Samsung Experience Store</p>
+        <p>Store Locator</p>
+    </div>
+    <div class="productDiv">
+        <h3>Support</h3>
+        <p>WhatsApp Us</p>
+        <p>Sign Language</p>
+        <p>Email Us</p>
+        <p>Call Us</p>
+        <p>Email the CEO</p>
+        <p>Community</p>
+        <p>Product Registration</p>
+        <p>Trace Repair</p>
+        <p>Service Center</p>
+        <p>Share Your Opinine</p>
+    </div>
+    <div class="productDiv">
+        <h3>Account & Community</h3>
+        <p>My Page</p>
+        <p>My Product</p>
+        <p>Order</p>
+        <p>Wishlist</p>
+        <p>Vouchers</p>
+        <p>My Referral</p>
+        <p>Services</p>
+        <p>Community</p>
+    </div>
+    <div class="productDiv">
+        <h3>Sustainability</h3>
+        <p>Environment Security & Private</p>
+        <p>Accessibility</p>
+        <p>Diversity-Equality-Inclusion</p>
+        <p>Corporate Citizenship</p>
+        <p>Corporate Sustainability</p>
+        <p>About Us</p>
+        <p>Company Info</p>
+        <p>Carrers</p>
+     </div>
+</div>
+
+    <div class="tabeDiv2"></div>
+
+    <div class="footer">
+        <p>Copyright ©1995-2025 SAMSUNG All Rights reserved.</p>
+        <p>Please dispose of e-waste and plastic waste responsibly.</p>
+        <p>For more information or e-waste pick up, please call 1800 5 7267864 or <a href="#">click here</a> for more
+            details.</p>
+        <p>Registered Office Address: 6th Floor, DLF Centre, Sansad Marg, New Delhi-110001</p>
+        <p>Corporate Identification Number (CIN): U31900DL1995PTC071387</p>
+    </div>
+
+
+    <footer class="footerLast">
+        <div class="footer-container">
+            <div class="footer-left">
+                <span style="font-weight: bolder; font-size: large;">India/English </span> 
+                <div id="footernav">
+                    <a href="#">Privacy</a>
+                    <a href="#">Legal</a>
+                    <a href="#">CSR Policy</a>
+                    <a href="#">Sitemap</a>
+                 </div>
+            </div>
+            <div class="footer-right">
+                <span style="font-size: medium;">Stay in the Loop?</span>
+                <div class="footerI">
+                    <div id="footerIcon">
+                        <i class="fab fa-facebook"></i>
+                        <i class="fab fa-x-twitter"></i>
+                        <i class="fab fa-instagram"></i>
+                        <i class="fab fa-linkedin"></i>
+                        <i class="fab fa-youtube"></i>
+                        <i class="fa-brands fa-whatsapp"></i>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+</body>
+
+<script>
+    let showMore=document.getElementById("showMore")
+    let Galaxybook=document.getElementById("Galaxybook")
+       Galaxybook.addEventListener("click",function(){
+    //    alert("book")
+       window.location.href="laptop.html"
+    })
+    let con=document.getElementById("con")
+  
+   let detailObj;
+
+    let data = [];
+    let fetchData = fetch("https://6789f159dd587da7ac28232e.mockapi.io/Users?page=1&limit=9")
+        .then(function (response) {
+            console.log(response)
+            return response.json()
+        })
+        .then(function (res) {
+            console.log(res)
+            data = res
+            tableData(data)
+        })
+        .catch(function (error) {
+            console.log("Error fetching data: ", error);
+        });
+
+    function tableData(data) {
+        data.forEach((e, i) => {
+            console.log(e.name)
+            let card=document.createElement("div")
+            card.className="card"
+            con.append(card)
+
+            let image=document.createElement("div")
+            let icon=document.createElement("img")
+             icon.setAttribute("src","https://upload.wikimedia.org/wikipedia/commons/thumb/0/03/Heart_empty_font_awesome.svg/1024px-Heart_empty_font_awesome.svg.png")
+           icon.className="iconClass"
+            
+             image.append(icon)
+           let imgCon=document.createElement("div")
+           imgCon.style.margin="10px"
+           let Image = document.createElement("img")
+            Image.style.width = "100%"
+            Image.style.backgroundColor = "#f9f4f4"
+            Image.src = e.image
+            imgCon.append(image,Image)
+
+           
+            let name = document.createElement("h3")
+            name.innerText = e.name
+
+            let br=document.createElement("br")
+
+            let btn1 = document.createElement("button")
+            btn1.className="btn1"
+            btn1.innerText="512 GB"
+
+            let btn2 = document.createElement("button")
+            btn2.className="btn2"
+            btn2.innerText="1 TB" 
+             
+            let brr=document.createElement("br")
+            let price=document.createElement("h2")
+            price.innerText=`$${e.price}`
+          
+            let save=document.createElement("h2")
+            save.innerText="10000"
+            save.style.color="skyblue"
+
+            let emi=document.createElement("button")
+            emi.innerText=`No Cost EMI starts from ${e.offerPrice}/month.`
+            emi.style.textDecoration="underline"
+            emi.style.width="100%"
+            emi.style.border="none"
+            emi.style.background="transparent"
+
+            let price2 = document.createElement("p")
+            price2.innerHTML = `MRP (Inclusive of all taxes)<s>$ ${e.price}</s>`
+            price2.style.float="left"
+            price2.style.margin="10px"
+            price2.style.color="gray"
+
+         
+            let edit = document.createElement("button")
+            edit.innerText = "Buy now"
+            edit.className="buyNow"
+           
+
+            edit.addEventListener("click",function(){
+                               
+            })
+            let learn=document.createElement("button")
+            learn.innerText="Learn more"
+            learn.className="learn"
+            card.addEventListener("click",function(){
+                alert("move to detail page")
+                window.location.href="laptop detail.html"
+                detailObj=e
+                console.log(detailObj)
+                localStorage.setItem("detail",JSON.stringify(detailObj))
+            })
+            card.append( imgCon, name,br,btn1,btn2,brr, price,save,emi, edit,learn)
+        });
+           
+        }
+    
+        showMore.addEventListener("click",()=>{
+            let con=document.getElementById("con")
+  
+  let detailObj;
+
+   let data = [];
+   let fetchData = fetch("https://6789f159dd587da7ac28232e.mockapi.io/Users?page2&limit=9")
+       .then(function (response) {
+           console.log(response)
+           return response.json()
+       })
+       .then(function (res) {
+           console.log(res)
+           data = res
+           tableData(data)
+       })
+       .catch(function (error) {
+           console.log("Error fetching data: ", error);
+       });
+
+   function tableData(data) {
+       data.forEach((e, i) => {
+           console.log(e.name)
+           let card=document.createElement("div")
+           card.className="card"
+
+           let image=document.createElement("div")
+           
+           con.append(card)
+          let imgCon=document.createElement("div")
+          imgCon.style.margin="10px"
+          let Image = document.createElement("img")
+           Image.style.width = "100%"
+           Image.style.backgroundColor = "#f9f4f4"
+           Image.src = e.image
+           imgCon.append(Image)
+
+          
+           let name = document.createElement("h3")
+           name.innerText = e.name
+
+           let br=document.createElement("br")
+
+           let btn1 = document.createElement("button")
+           btn1.className="btn1"
+           btn1.innerText="512 GB"
+
+           let btn2 = document.createElement("button")
+           btn2.className="btn2"
+           btn2.innerText="1 TB" 
+            
+           let brr=document.createElement("br")
+           let price=document.createElement("h2")
+           price.innerText=`$${e.price}`
+         
+           let save=document.createElement("h2")
+           save.innerText=" Save $1000"
+           save.style.color="skyblue"
+
+           let emi=document.createElement("button")
+           emi.innerText=`No Cost EMI starts from $${e.price}/month.`
+           emi.style.textDecoration="underline"
+           emi.style.width="100%"
+           emi.style.border="none"
+           emi.style.background="transparent"
+
+           let price2 = document.createElement("p")
+           price2.innerHTML = `MRP (Inclusive of all taxes)<s>$ ${e.price}</s>`
+           price2.style.float="left"
+           price2.style.margin="10px"
+           price2.style.color="gray"
+
+        
+           let edit = document.createElement("button")
+           edit.innerText = "Buy now"
+           edit.className="buyNow"
+          
+
+           edit.addEventListener("click",function(){
+                              
+           })
+           let learn=document.createElement("button")
+           learn.innerText="Learn more"
+           learn.className="learn"
+           card.addEventListener("click",function(){
+               alert("move to detail page")
+               window.location.href="laptop detail.html"
+               detailObj=e
+               console.log(detailObj)
+               localStorage.setItem("detail",JSON.stringify(detailObj))
+           })
+           card.append( imgCon, name,br,btn1,btn2,brr, price,save,emi, edit,learn)
+       });
+          
+       }
+    
+        })
+
+</script>
+</html>
